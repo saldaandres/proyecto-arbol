@@ -13,6 +13,10 @@ public class ArbolInventario {
         recorrerEnOrden(raiz);
     }
 
+    public Producto buscar(int id) {
+        return buscar(id, raiz);
+    }
+
     private static Producto registrar(Producto actual, int idNuevo, String nombreNuevo ) {
         if (actual == null) {
             return new Producto(idNuevo, nombreNuevo);
@@ -34,7 +38,17 @@ public class ArbolInventario {
         recorrerEnOrden(actual.izquierdo);
         System.out.println(actual);
         recorrerEnOrden(actual.derecho);
-
     }
 
+    private static Producto buscar(int id, Producto actual) {
+        if (actual == null || actual.id == id) {
+            return actual;
+        }
+
+        if (actual.id < id) {
+            return buscar(id, actual.derecho);
+        }
+
+        return buscar(id, actual.izquierdo);
+    }
 }
