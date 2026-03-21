@@ -17,6 +17,8 @@ public class ArbolInventario {
         return buscar(id, raiz);
     }
 
+    // visita los nodos recursivamente hasta encontrar un nodo nulo
+    // donde insertar el valor adecuado
     private static Producto registrar(Producto actual, int idNuevo, String nombreNuevo ) {
         if (actual == null) {
             return new Producto(idNuevo, nombreNuevo);
@@ -31,6 +33,8 @@ public class ArbolInventario {
         return actual;
     }
 
+    // visita los nodos visitandolos recursivamente primero a la izquierda, y cuando llega a los extremos
+    // se mueve a la derecha
     private static void recorrerEnOrden(Producto actual) {
         if (actual == null) {
             return;
@@ -40,6 +44,7 @@ public class ArbolInventario {
         recorrerEnOrden(actual.derecho);
     }
 
+    // retorna el producto con el ID buscado y nulo si no se encuentra
     private static Producto buscar(int id, Producto actual) {
         if (actual == null || actual.id == id) {
             return actual;
