@@ -33,7 +33,7 @@ public class ArbolInventario {
         return actual;
     }
 
-    // visita los nodos visitandolos recursivamente primero a la izquierda, y cuando llega a los extremos
+    // visita los nodos recursivamente primero a la izquierda, y cuando llega a los extremos
     // se mueve a la derecha
     private static void recorrerEnOrden(Producto actual) {
         if (actual == null) {

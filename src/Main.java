@@ -28,8 +28,11 @@ public class Main {
             }
         }
         System.out.println("\nHas salido del programa");
+        menu.scanner.close();
     }
 
+    // metodo de ayuda para tomar los parametros del producto
+    // e invocar el metodo subyacente del arbol
     void registrarProducto() {
         System.out.print("Digita el ID del nuevo producto: ");
         int id = scanner.nextInt();
@@ -39,11 +42,14 @@ public class Main {
         System.out.println("Producto anadido con exito");
     }
 
+    // invoca el metodo de recorrer en orden de la clase arbol
     void mostrarInventario() {
         System.out.println("\n---------- Inventario Actual -----------");
         arbol.recorrerEnOrden();
     }
 
+    // se apoya del metodo buscar de la clase arbol para buscar un producto
+    // retorna el producto y si no existe se lo indica al usuario
     void buscarId() {
         System.out.print("Digita el ID que deseas buscar:");
         int id = scanner.nextInt();
