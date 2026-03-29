@@ -21,8 +21,13 @@ public class Main {
                 case 1: menu.registrarProducto();
                     break;
                 case 2: menu.mostrarInventario();
+                    break;
+                case 3: menu.buscarId();
+                    break;
+                default: eleccion = 0;
             }
         }
+        System.out.println("\nHas salido del programa");
     }
 
     void registrarProducto() {
@@ -39,7 +44,19 @@ public class Main {
         arbol.recorrerEnOrden();
     }
 
+    void buscarId() {
+        System.out.print("Digita el ID que deseas buscar:");
+        int id = scanner.nextInt();
+        Producto producto = arbol.buscar(id);
+        if (producto != null) {
+            System.out.println(producto);
+            return;
+        }
+        System.out.println("Producto no encontrado");
+    }
+
     void imprimirMenu() {
+        System.out.println();
         System.out.println("------- Escoge una de las opciones a continuacion -------");
         System.out.println("|         1. Registrar nuevo producto.                    |");
         System.out.println("|         2. Mostrar el inventario.                       |");
