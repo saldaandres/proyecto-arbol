@@ -1,3 +1,6 @@
+# Link video: https://drive.google.com/file/d/1KwEYvDH1HSQhia7wOXxCVcFa0k7SkeHs/view?usp=drive_link
+# Link github: https://github.com/saldaandres/proyecto-arbol
+
 # Proyecto de arbol
 
 Este proyecto tiene como objetivo simular un sistema de inventario utilizando la estructura de 
